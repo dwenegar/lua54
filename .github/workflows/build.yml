@@ -20,7 +20,7 @@ jobs:
           cmake --build build --target install --config release
           cmake --build build --target package --config release
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: lua-${{ matrix.os }}
           path: artifacts/lua*.*
@@ -42,7 +42,7 @@ jobs:
           prerelease: false
       - name: Download Artifacts
         id: download-artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           path: ~/artifacts
       - name: Upload Assets
